@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Login</title>
 </head>
@@ -8,6 +9,7 @@
         {{ session('success') }}
     </div>
 @endif
+
 <body>
     <h1>Login as {{ ucfirst($role) }}</h1>
     <form method="POST" action="{{ route('login') }}">
@@ -34,8 +36,9 @@
             </div>
         @endif
     </form>
-    @if($role == 'visitor')
+    @if ($role == 'visitor')
         <p>Don't have an account? <a href="{{ route('register') }}">Register here</a></p>
     @endif
 </body>
+
 </html>

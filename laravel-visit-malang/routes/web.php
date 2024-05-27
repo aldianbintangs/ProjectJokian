@@ -16,6 +16,10 @@ Route::get('/login/visitor', [LoginController::class, 'showVisitorLoginForm'])->
 Route::get('/login/admin', [LoginController::class, 'showAdminLoginForm'])->name('login.admin');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
+// Route::get('/login', function () {
+//     return redirect()->route('login');
+// });
+
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
@@ -28,7 +32,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     });
 
-    Route::get('/logout', function() {
+    Route::get('/logout', function () {
         Auth::logout();
         return redirect('/');
     })->name('logout');
