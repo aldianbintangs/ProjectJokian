@@ -49,4 +49,10 @@ Route::middleware('auth.admin')->group(function () {
     Route::get('/dashboard/admin', function () {
         return view('admin.dashboard');
     })->name('dashboard.admin');
+    Route::get('/admin/manage-users', function () {
+        return view('admin.manage-user');
+    })->name('admin.manage-user');
+    Route::get('/admin/add-event', function () {
+        return view('admin.add_event');
+    })->name('admin.add_event');
 });

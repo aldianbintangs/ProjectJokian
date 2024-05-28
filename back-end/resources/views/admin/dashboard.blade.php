@@ -1,13 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/css/admin_dashboard.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lexend', sans-serif;
+            background: linear-gradient(to right, #162E52 0%, #214161 9%, #305E79 47%, #448699 100%);
+            color: white;
+        }
+
+        .profile {
+            width: 348px;
+            height: 80px;
+            border-radius: 50px;
+            background-color: white;
+            text-align: center;
+            font-size: 23px;
+            margin-left: 70%;
+        }
+
+        .profile p {
+            text-align: center;
+            padding-top: 24px;
+            color: black;
+        }
+
+        hr {
+            color: black;
+        }
+
+        .line {
+            width: 350px;
+            height: 1px;
+            border: white 2px solid;
+            background-color: white;
+        }
+
+        h1,
+        .line {
+            margin-left: 20px;
+            margin-bottom: 0px;
+            padding-left: 7px;
+        }
+
+
+
+        .content {
+            display: flex;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        button {
+            margin-right: 40px;
+            border: black 2px solid;
+            border-radius: 10px;
+            display: flex;
+            width: 400px;
+
+        }
+
+        button a {
+            color: black;
+            text-decoration: none;
+            font-size: 23px;
+            font-weight: bold;
+            display: flex;
+        }
+
+        button p {
+            padding-top: 10px;
+            padding-left: 40px;
+            padding-right: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Welcome, Admin</h1>
-    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-    </form>
+    <div class="profile">
+        <p>Hi, Admin #name</p>
+    </div>
+
+    <h1>ADMIN DASHBOARD</h1>
+    <div class="line"></div>
+    <div class="content">
+
+        <button><a href="/admin/add-event">
+                <img src=" {{ asset('assets/image/calendar_icons.png') }}" alt="">
+                <p>TAMBAHKAN EVENT</p>
+            </a></button>
+        <button><a href="/admin/manage-users">
+                <img src=" {{ asset('assets/image/People_icons.png') }}" alt="">
+
+                <p>KELOLA USER</p>
+            </a></button>
+
+    </div>
+
 </body>
+
 </html>
