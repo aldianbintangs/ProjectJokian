@@ -1,0 +1,88 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #D8F0FF;
+    font-family: 'Lexend', sans-serif; 
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+    margin-left: 35%;
+    margin-bottom: 50px;
+}
+
+.login {
+    width: 100%;
+    height: 800px;
+    background-image: url('../image/user_register_hero.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lexend', sans-serif; 
+    padding-top: 200px;
+}
+.box{
+    width: 644px;
+    height: 550px;
+    background-color: #fff;
+    padding-top: 100px;
+    margin-left: 389px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-family: 'Lexend', sans-serif; 
+    align-items: center;
+}
+.box h1{
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Lexend', sans-serif; 
+}
+.box img{
+    width: 200px;
+    /* height: 54px; */
+    border-radius: 50%;
+    margin-left: 200px;
+    /* margin-bottom: 20px; */
+}
+
+.box input{
+    width: 457px;
+    height: 30px;
+    /* padding: 10px; */
+    background-color: #E2E0E0;
+    /* border-bottom: 1px solid black; */
+    font-family: 'Lexend', sans-serif; 
+    border-radius: 10px;
+    box-shadow: inset;
+    /* margin-left: 30px; */
+    
+}
+
+.box span, p, input{
+    margin-left: 94px;
+    font-size: 14px;
+}
+
+.box button{
+    width: 310px;
+    padding: 10px;
+    background: linear-gradient(to right, #162E52 0%, #214161 9%, #305E79 47%, #448699 100%);;
+    color: white;
+    border: none;
+    font-family: 'Lexend', sans-serif; 
+    border-radius: 10px;
+    box-shadow: inset;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 164px;
+    /* font-size: 14px; */
+}

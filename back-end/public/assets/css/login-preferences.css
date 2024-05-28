@@ -1,0 +1,71 @@
+body{
+    background-color: #D8F0FF;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend', sans-serif; 
+    background-image: url("../image/HeroAdmin.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:  rgba(48, 94, 121, 0.5);
+    background-blend-mode: overlay;
+    color: white ;
+
+}
+
+.hero img{
+    width: 457px;
+    height: 170px;
+    margin-top: 40px;
+    align-items: center;
+    /* margin-left: 35%; */
+    /* margin-bottom: 80px; */
+}
+
+.hero{
+    margin-top: 20px;
+    margin-left: 300px;
+    height: 400px;
+    /* margin-bottom: 75px; */
+    text-align: center;
+    font-weight: bold;
+    width: 800px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: black;
+    border-radius: 10px;
+    border: black 2px solid;
+}    
+
+.hero h1{
+    font-size: 30px;
+    /* margin-top: 100px; */
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.vertical-line {
+    width: 2px; 
+    height: 100px; 
+    background-color: black; 
+    margin: 20px; 
+  }
+
+.Role{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background-color: #30607A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    height: 100px;
+    width: 335px;
+    border: black 2px solid;
+    font-size: 25px;
+    font-weight: bold;
+}
