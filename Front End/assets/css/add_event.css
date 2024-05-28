@@ -1,0 +1,32 @@
+body{
+    background: linear-gradient(to right, #162E52 0%, #214161 9%, #305E79 47%, #448699 100%);
+}
+
+.profile{
+    width: 348px;
+    height: 80px;
+    border-radius: 50px;
+    background-color: white;
+    text-align: center;
+    font-size: 23px;
+    margin-left: 70%;
+}
+
+.profile p{
+    text-align: center;
+    padding-top:24px;
+    color: black;
+    font-weight: bold;
+}
+
+.box {
+    width: 900px;
+    height: 650px;
+    background-color: white;
+    border-radius: 10px;
+    border: black 1px solid;
+    box-shadow: inset;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
