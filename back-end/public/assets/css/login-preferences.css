@@ -2,61 +2,68 @@ body{
     background-color: #D8F0FF;
     margin: 0;
     padding: 0;
-    font-family: 'Lexend', sans-serif; 
+    font-family: 'Lexend', sans-serif;
+    color: white ;
+
+}
+
+img{
+    width: 457px;
+    height: 170px;
+    margin-top: 40px;
+    align-items: center;
+    margin-left: 450px;
+
+}
+
+.hero{
     background-image: url("../image/HeroAdmin.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-color:  rgba(48, 94, 121, 0.5);
     background-blend-mode: overlay;
-    color: white ;
-
-}
-
-.hero img{
-    width: 457px;
-    height: 170px;
-    margin-top: 40px;
-    align-items: center;
-    /* margin-left: 35%; */
-    /* margin-bottom: 80px; */
-}
-
-.hero{
-    margin-top: 20px;
-    margin-left: 300px;
-    height: 400px;
-    /* margin-bottom: 75px; */
+    margin-top: 0px;
     text-align: center;
     font-weight: bold;
-    width: 800px;
+    width: 100%;
     height: 600px;
-    background-color: rgba(255, 255, 255, 0.75);
     color: black;
-    border-radius: 10px;
-    border: black 2px solid;
-}    
+    padding-top: 200px;
+    margin-bottom: 40px;
+
+}
 
 .hero h1{
     font-size: 30px;
-    /* margin-top: 100px; */
     margin-left: 10%;
     margin-right: 10%;
+
 }
 .vertical-line {
-    width: 2px; 
-    height: 100px; 
-    background-color: black; 
-    margin: 20px; 
+    width: 2px;
+    height: 100px;
+    background-color: white;
+    margin: 20px;
   }
 
 .Role{
-    display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+    width: 807px;
+    height: 300px;
+    color: white;
+    margin-left: 300px;
+
+}
+
+.center{
+    display: flex;
+    margin-top: 20px;
 }
 
 button{
-    background-color: #30607A;
+    background: linear-gradient(to right, #162E52 0%, #214161 9%, #305E79 47%, #448699 100%);;
     color: white;
     border: none;
     border-radius: 5px;
@@ -65,7 +72,7 @@ button{
     cursor: pointer;
     height: 100px;
     width: 335px;
-    border: black 2px solid;
+    border: white 2px solid;
     font-size: 25px;
     font-weight: bold;
 }

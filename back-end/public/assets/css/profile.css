@@ -8,6 +8,7 @@ body {
 
 img{
     margin-left:87px;
+
 }
 .box{
     width: 90%;
@@ -37,6 +38,13 @@ img{
 
 }
 
+.box img{
+    width: 239px;
+    height: 245px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    border: 5px solid #ccc;
+}
 
 input{
     width: 625px;

@@ -1,19 +1,17 @@
 <?php
 
-
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\RedirectAfterLogout;
 use App\Http\Controllers\EditProfileController;
+use App\Http\Controllers\AdminUserController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| Here is where you can register web routes for your application.
 |
 */
 
@@ -42,17 +40,17 @@ Route::middleware('auth.visitor')->group(function () {
     Route::post('/profile/update', [EditProfileController::class, 'updateProfile'])->name('profile.update');
 });
 
-Route::get('/profile/edit', [EditProfileController::class, 'showEditProfileForm'])->name('profile.edit');
-Route::post('/profile/update', [EditProfileController::class, 'updateProfile'])->name('profile.update');
-
 Route::middleware('auth.admin')->group(function () {
     Route::get('/dashboard/admin', function () {
         return view('admin.dashboard');
     })->name('dashboard.admin');
-    Route::get('/admin/manage-users', function () {
-        return view('admin.manage-user');
-    })->name('admin.manage-user');
-    Route::get('/admin/add-event', function () {
-        return view('admin.add_event');
-    })->name('admin.add_event');
+    Route::resource('admin/users', AdminUserController::class)->names([
+        'index' => 'admin.users.index',
+        'create' => 'admin.users.create',
+        'store' => 'admin.users.store',
+        'show' => 'admin.users.show',
+        'edit' => 'admin.users.edit',
+        'update' => 'admin.users.update',
+        'destroy' => 'admin.users.destroy',
+    ]);
 });
