@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Edit Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ asset("/assets/css/profile.css") }}">
 </head>
 <body>
-    <h1>Edit Profile</h1>
     @if (session('success'))
         <div>
             {{ session('success') }}
         </div>
     @endif
     <form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data">
-        @csrf
-        <div>
-            <label>Username</label>
-            <input type="text" name="username" value="{{ old('username', $user->username) }}" required>
+    @csrf
+    <img src="{{ asset("/assets/image/profile_logo.png") }}" alt="" srcset="">
+    <div class="box">
+        <div class="content">
+            <div class="profilePicture">
+                @if ($user->foto)
+                <img src={{ asset('storage/' . $user->foto) }} alt="Profile Picture" width="100">
+                @else
+                <img src={{ asset('assets/icon/pp.jpg') }} alt="Default Profile Picture" width="100">
+                @endif
+                <input type="file" name="foto">Change Photo Profile</input>
+            </div>
+            <div class="profileDetails">
+                <p>username</p>
+                <input type="text" name="username" value="{{ old('username', $user->username) }}" required>
+                <p>email</p>
+                <input type="email" disabled>
+                <p>password</p>
+                <input type="password" disabled>
+            </div>
         </div>
-        <div>
-            <label>Profile Picture</label>
-            <input type="file" name="foto">
-            @if ($user->foto)
-                <img src="{{ asset('storage/' . $user->foto) }}" alt="Profile Picture" width="100">
-            @else
-                <img src="{{ asset('assets/icon/pp.jpg') }}" alt="Default Profile Picture" width="100">
-            @endif
+        <div class="button">
+            <button>Save</button>
         </div>
-        <button type="submit">Update Profile</button>
+    </div>
     </form>
-    @if ($errors->any())
-        <div>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 </body>
 </html>

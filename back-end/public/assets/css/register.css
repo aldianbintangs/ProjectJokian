@@ -4,7 +4,7 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: #D8F0FF;
-    font-family: 'Lexend', sans-serif; 
+    font-family: 'Lexend', sans-serif;
 }
 
 .logo {
@@ -23,7 +23,7 @@ html, body {
     background-repeat: no-repeat;
     padding: 0;
     margin: 0;
-    font-family: 'Lexend', sans-serif; 
+    font-family: 'Lexend', sans-serif;
     padding-top: 200px;
 }
 .box{
@@ -36,13 +36,13 @@ html, body {
     border: 1px solid black;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     padding: 20px;
-    font-family: 'Lexend', sans-serif; 
+    font-family: 'Lexend', sans-serif;
     align-items: center;
 }
 .box h1{
     margin-bottom: 20px;
     text-align: center;
-    font-family: 'Lexend', sans-serif; 
+    font-family: 'Lexend', sans-serif;
 }
 .box img{
     width: 200px;
@@ -58,11 +58,11 @@ html, body {
     /* padding: 10px; */
     background-color: #E2E0E0;
     /* border-bottom: 1px solid black; */
-    font-family: 'Lexend', sans-serif; 
+    font-family: 'Lexend', sans-serif;
     border-radius: 10px;
     box-shadow: inset;
     /* margin-left: 30px; */
-    
+
 }
 
 .box span, p, input{
@@ -76,7 +76,7 @@ html, body {
     background: linear-gradient(to right, #162E52 0%, #214161 9%, #305E79 47%, #448699 100%);;
     color: white;
     border: none;
-    font-family: 'Lexend', sans-serif; 
+    font-family: 'Lexend', sans-serif;
     border-radius: 10px;
     box-shadow: inset;
     margin-top: 20px;
