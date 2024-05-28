@@ -20,7 +20,7 @@
             <img src="{{ asset("/assets/image/calendar_icons.png") }}" alt="">
             <p>TAMBAHKAN EVENT</p>
         </a></button>
-        <button><a href="{{ url("") }}">
+        <button><a href="{{ route('admin.users.index') }}">
             <img src="{{ asset("/assets/image/People_icons.png") }}" alt="">
             <p>KELOLA USER</p>
         </a></button>
