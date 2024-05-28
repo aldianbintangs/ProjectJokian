@@ -53,4 +53,7 @@ Route::middleware('auth.admin')->group(function () {
         'update' => 'admin.users.update',
         'destroy' => 'admin.users.destroy',
     ]);
+    Route::get('/admin/add-event', function () {
+        return view('admin.add_event');
+    })->name('admin.add_event');
 });

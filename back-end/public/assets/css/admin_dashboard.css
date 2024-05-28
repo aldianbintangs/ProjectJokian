@@ -18,7 +18,7 @@ body {
 
 .profile p{
     text-align: center;
-    padding-top:24px;
+    /* padding-top:24px; */
     color: black;
 }
 
@@ -74,4 +74,27 @@ button p{
     padding-top: 10px;
     padding-left: 40px;
     padding-right: 10px;
+}
+
+.logoutButton {
+    background-color: #ff4b5c; /* Latar belakang merah */
+    padding: 10px 20px; /* Padding atas-bawah dan kiri-kanan */
+    border-radius: 5px; /* Sudut melengkung */
+    text-align: center; /* Pusatkan teks */
+    width: fit-content; /* Sesuaikan lebar dengan konten */
+    margin: 20px auto; /* Margin atas-bawah dan pusatkan secara horizontal */
+}
+
+.logoutButton a {
+    text-decoration: none; /* Hilangkan garis bawah pada tautan */
+    color: white; /* Warna teks putih */
+    font-size: 18px; /* Ukuran font lebih besar */
+    font-weight: bold; /* Teks tebal */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
