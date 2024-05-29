@@ -249,23 +249,22 @@ addEventButton.onclick = function (e) {
       labels[i].className = "";
    }
 }
-// Fungsi untuk memuat event berdasarkan tanggal yang dipilih di kalender
+
 function loadEventsByDate(date) {
     $.ajax({
         url: '/api/events',
         method: 'GET',
-        data: { date: date.toISOString().slice(0, 10) }, // Kirim tanggal dalam format ISO (YYYY-MM-DD)
+        data: { date: date.toISOString().slice(0, 10) },
         success: function(data) {
-            renderSidebarEvents(data); // Setelah menerima respons, render event di sidebar
+            renderSidebarEvents(data);
         }
     });
 }
 
 
-// Fungsi untuk merender event di sidebar
 function renderSidebarEvents(events) {
     let sidebarEvents = $('#sidebarEvents');
-    sidebarEvents.empty(); // Kosongkan sidebar sebelum menambah event-event baru
+    sidebarEvents.empty();
 
     if (events.length > 0) {
         events.forEach(event => {
@@ -282,14 +281,16 @@ function renderSidebarEvents(events) {
     }
 }
 
-// Menangani klik pada tanggal di kalender
+
 $(document).on('click', '.col', function() {
     let day = parseInt($(this).text());
     let date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-    // Atur waktu ke tengah malam untuk menghindari pergeseran timezone
     date.setHours(0, 0, 0, 0);
-    console.log("Selected Date: ", date); // Periksa tanggal yang dipilih
-    loadEventsByDate(date); // Panggil fungsi untuk memuat event berdasarkan tanggal yang dipilih
+
+    let utcDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+
+    console.log("Selected Date (UTC): ", utcDate.toISOString());
+    loadEventsByDate(utcDate);
 });
 
 

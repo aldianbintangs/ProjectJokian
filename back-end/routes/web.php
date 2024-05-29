@@ -44,7 +44,6 @@ Route::middleware('auth.visitor')->group(function () {
         return view('event');
     })->name('event.visitor');
     Route::get('/events', [EventVisitorController::class, 'index'])->name('events.index');
-    Route::get('/events/date/{date}', [EventVisitorController::class, 'showByDate'])->name('events.showByDate');
     Route::get('/api/events', [EventVisitorController::class, 'getEvents'])->name('api.events.index');
 });
 

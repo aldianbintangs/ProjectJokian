@@ -22,6 +22,7 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
+        $event = new Event();
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'description' => 'nullable',
@@ -31,7 +32,7 @@ class EventController extends Controller
 
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('events', 'public');
-            $validatedData['image'] = $imagePath;
+            $event->image = $imagePath;
         }
 
         Event::create($validatedData);
@@ -58,7 +59,7 @@ class EventController extends Controller
                 Storage::disk('public')->delete($event->image);
             }
             $imagePath = $request->file('image')->store('events', 'public');
-            $validatedData['image'] = $imagePath;
+            $event->image = $imagePath;
         }
 
         $event->update($validatedData);
