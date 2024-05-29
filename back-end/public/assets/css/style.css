@@ -180,6 +180,7 @@ a.site-logo .image {
     height: 50px;
     border-radius: 50%;
     border: 5px solid #ccc;
+    margin-left: 20px;
 }
 
 .navbar{

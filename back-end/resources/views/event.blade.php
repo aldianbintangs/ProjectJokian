@@ -158,7 +158,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Function to fetch and render events
             function fetchEvents() {
                 $.ajax({
                     url: '/api/events',
@@ -169,11 +168,9 @@
                 });
             }
 
-            // Function to render events on the calendar
             function renderEvents(events) {
                 let calendarBody = $('#table-body');
                 calendarBody.empty();
-                // Process events and add to the calendar
                 events.forEach(event => {
                     let eventDate = new Date(event.date);
                     let eventElement = `
@@ -182,15 +179,12 @@
                             <p>${event.description}</p>
                         </div>
                     `;
-                    // Find the appropriate cell based on the date and insert event
                     let cell = $(`#calendar-table .row .col[data-date='${eventDate.getDate()}']`);
                     if (cell.length) {
                         cell.append(eventElement);
                     }
                 });
             }
-
-            // Fetch and render events on page load
             fetchEvents();
         });
     </script>

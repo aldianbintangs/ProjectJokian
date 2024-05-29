@@ -23,7 +23,7 @@
                     <div class="navbar">
                         <div class="MenuItem" id="MenuItems">
                             <a class="item" href="{{ url('index.html') }}">Home</a>
-                            <a class="item" href="{{ url('event.html') }}">Event</a>
+                            <a class="item" href="{{ route('events.index') }}">Event</a>
                             <a class="item" href="{{ url('destination.html') }}">Destination</a>
                             <a class="item" href="{{ url('#') }}">Package</a>
                             {{-- <a class="item" href="{{ route('logout') }}"
@@ -61,7 +61,7 @@
                                 @csrf
                             </form>
                         </div>
-                        <form class="w-100 me-3" role="search">
+                        <form class="" role="search">
                             <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                         </form>
                         <a href="{{ route('profile.edit') }}">
