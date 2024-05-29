@@ -18,6 +18,10 @@
         @csrf
         <img src="{{ asset('/assets/image/profile_logo.png') }}" alt="" srcset="">
         <div class="box">
+            <div class="back-button">
+                <img src="{{ asset('/assets/image/back-button.png') }}" alt="" onclick="history.back()">
+
+            </div>
             <div class="content">
                 <div class="profilePicture">
                     @if ($user->foto)

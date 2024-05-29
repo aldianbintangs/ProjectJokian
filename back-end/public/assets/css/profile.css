@@ -114,3 +114,12 @@ p{
     margin-bottom: 30px;
     /* border: 5px solid black; */
 }
+
+.back-button img{
+    width: 30px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 0;
+    border: none;
+    margin-top: 20px;
+}
