@@ -27,7 +27,7 @@
     <h1>ADMIN DASHBOARD</h1>
     <div class="line"></div>
     <div class="content">
-        <button><a href="/admin/add-event">
+        <button><a href="{{ route('admin.events.index') }}">
                 <img src="{{ asset('/assets/image/calendar_icons.png') }}" alt="">
                 <p>TAMBAHKAN EVENT</p>
             </a></button>

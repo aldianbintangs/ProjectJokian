@@ -37,7 +37,7 @@
                                 <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Edit Profile</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault(); logout()">Logout</a></li>
+                                    onclick="event.preventDefault(); logout()">Logout</a></li>
                             </ul>
                         </div>
                     </div>
