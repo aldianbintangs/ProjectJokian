@@ -117,9 +117,10 @@ p{
 
 .back-button img{
     width: 30px;
-    height: 60px;
+    height: 40px;
     cursor: pointer;
     border-radius: 0;
     border: none;
     margin-top: 20px;
+    margin-left: 50px;
 }
