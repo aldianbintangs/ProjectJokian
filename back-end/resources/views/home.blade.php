@@ -69,7 +69,7 @@
                                 <img src="{{ asset('storage/' . Auth::user()->foto) }}" alt="Profile Picture"
                                     class="profile-picture">
                             @else
-                                <img src="{{ asset('default-profile.png') }}" alt="Default Profile Picture"
+                                <img src="{{ asset('assets/icon/pp.jpg') }}" alt="Default Profile Picture"
                                     class="profile-picture">
                             @endif
                         </a>
@@ -359,4 +359,4 @@
 
 </body>
 
-</html>
+/html>
