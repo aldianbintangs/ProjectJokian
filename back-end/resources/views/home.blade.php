@@ -23,7 +23,7 @@
                 <div class="d-flex align-items-center">
                     <div class="MenuItem" id="MenuItems">
                         <a class="item" href="{{ url("index.html") }}">Home</a>
-                        <a class="item" href="{{ url("event.html") }}">Event</a>
+                        <a class="item" href="{{ route("event.visitor") }}">Event</a>
                         <a class="item" href="{{ url("destination.html") }}">Destination</a>
                         <a class="item" href="{{ url("package.html") }}">Package</a>
                         <a class="item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>

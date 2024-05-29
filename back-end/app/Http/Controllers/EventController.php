@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class EventController extends Controller
 {
@@ -80,9 +81,4 @@ class EventController extends Controller
         $events = Event::orderBy('event_date', 'asc')->get();
         return view('events.index', compact('events'));
     }
-    public function getEvents()
-{
-    $events = Event::orderBy('event_date', 'asc')->get();
-    return response()->json($events);
-}
 }

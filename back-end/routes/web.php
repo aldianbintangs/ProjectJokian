@@ -6,6 +6,7 @@ use App\Http\Middleware\RedirectAfterLogout;
 use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventVisitorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,12 @@ Route::middleware('auth.visitor')->group(function () {
     })->name('event');
     Route::get('/profile/edit', [EditProfileController::class, 'showEditProfileForm'])->name('profile.edit');
     Route::post('/profile/update', [EditProfileController::class, 'updateProfile'])->name('profile.update');
+    Route::get('event/visitor', function () {
+        return view('event');
+    })->name('event.visitor');
+    Route::get('/events', [EventVisitorController::class, 'index'])->name('events.index');
+    Route::get('/events/date/{date}', [EventVisitorController::class, 'showByDate'])->name('events.showByDate');
+    Route::get('/api/events', [EventVisitorController::class, 'getEvents'])->name('api.events.index');
 });
 
 Route::middleware('auth.admin')->group(function () {
@@ -64,4 +71,3 @@ Route::middleware('auth.admin')->group(function () {
         'destroy' => 'admin.events.destroy',
     ]);
 });
-Route::get('/api/events', [EventController::class, 'getEvents'])->name('admin.events.index');
