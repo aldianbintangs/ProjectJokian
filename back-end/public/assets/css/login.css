@@ -7,19 +7,13 @@ html, body {
     font-family: 'Lexend', sans-serif; 
 }
 
-.logo {
-    width: 100px;
-    height: 100px;
-    margin-top: 50px;
-    margin-left: 35%;
-    margin-bottom: 50px;
-}
+
 
 .login {
     width: 100%;
     height: 800px;
     background-image: url('../image/user_login_hero.png');
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 0;
     margin: 0;
@@ -31,7 +25,8 @@ html, body {
     height: 400px;
     background-color: #fff;
     padding-top: 100px;
-    margin-left: 389px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 10px;
     border: 1px solid black;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -48,7 +43,7 @@ html, body {
     width: 200px;
     /* height: 54px; */
     border-radius: 50%;
-    margin-left: 200px;
+    margin-left: 220px;
     /* margin-bottom: 20px; */
 }
 
@@ -83,6 +78,15 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 164px;
+    margin-left: auto;
+    margin-right: auto;
     /* font-size: 14px; */
+    cursor: pointer;
 }
+
+.error-alert ul {
+    list-style-type: none;
+    color: red;
+    text-align: center;
+}
+

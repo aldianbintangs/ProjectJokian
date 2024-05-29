@@ -16,7 +16,6 @@
             font-family: 'Lexend', sans-serif;
             background: linear-gradient(to right, #162E52 0%, #214161 9%, #305E79 47%, #448699 100%);
             color: white;
-            overflow-x: hidden;
         }
 
         .profile {
@@ -61,11 +60,11 @@
             padding: 20px;
             border-radius: 10px;
             color: #000;
-            width: 95%;
+            width: 700px;
         }
 
         .add-user-btn {
-            background-color: #007bff;
+            background-color: red;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -77,7 +76,7 @@
         }
 
         table {
-            width: 100%;
+            width: 400px;
             border-collapse: collapse;
             margin-bottom: 20px;
         }
@@ -122,23 +121,18 @@
             color: white;
 
         }
-
-        .user-management img {
-            margin-top: 30px;
-        }
     </style>
 </head>
 
 <body>
     <div class="header">
-        <img src="{{ asset('assets/image/profile_logo.png') }}" alt="">
+        <img src="assets/image/profile_logo.png" alt="">
         <div class="profile">
             <p>Hi, Admin #name</p>
         </div>
     </div>
     <div class="container">
         <div class="user-management">
-            <a href="/dashboard/admin"><img src="{{ asset('assets/image/back-button.png') }}" alt=""></a>
             <button class="add-user-btn">Add User</button>
             <table>
                 <thead>
@@ -198,3 +192,4 @@
 </body>
 
 </html>
+
