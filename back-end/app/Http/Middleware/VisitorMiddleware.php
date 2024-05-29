@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+// middleware untuk mengecek apakah user yang login adalah visitor
 class VisitorMiddleware
 {
     /**

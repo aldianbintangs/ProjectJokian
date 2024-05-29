@@ -31,6 +31,7 @@ Route::post('/login/admin', [AuthController::class, 'loginAdmin']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
+//route untuk visitor
 Route::middleware('auth.visitor')->group(function () {
     Route::get('/home/visitor', function () {
         return view('home');
@@ -47,6 +48,7 @@ Route::middleware('auth.visitor')->group(function () {
     Route::get('/api/events', [EventVisitorController::class, 'getEvents'])->name('api.events.index');
 });
 
+//route untuk admin
 Route::middleware('auth.admin')->group(function () {
     Route::get('/dashboard/admin', function () {
         return view('admin.dashboard');
