@@ -61,7 +61,7 @@
                                 @csrf
                             </form>
                         </div>
-                        <form class="w-100 me-3" role="search">
+                        <form class="" role="search">
                             <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                         </form>
                         <a href="{{ route('profile.edit') }}">
@@ -69,8 +69,13 @@
                                 <img src="{{ asset('storage/' . Auth::user()->foto) }}" alt="Profile Picture"
                                     class="profile-picture">
                             @else
-                                <img src="{{ asset('assets/icon/pp.jpg') }}" alt="Default Profile Picture"
-                                    class="profile-picture">
+                                @if (Auth::user()->foto)
+                                    <img src="{{ asset('storage/' . Auth::user()->foto) }}" alt="Profile Picture"
+                                        class="profile-picture">
+                                @else
+                                    <img src="{{ asset('assets/icon/pp.jpg') }}" alt="Default Profile Picture"
+                                        class="profile-picture">
+                                @endif
                             @endif
                         </a>
                 </nav>
@@ -119,7 +124,8 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-6 card text-center">
-                    <img class="card-img-top" src="{{ asset('assets/image/Pantai.png') }}" alt="Beach of Malang Trip">
+                    <img class="card-img-top" src="{{ asset('assets/image/Pantai.png') }}"
+                        alt="Beach of Malang Trip">
                     <div class="card-body">
                         <h5 class="card-title">Beach of Malang Trip</h5>
                     </div>
