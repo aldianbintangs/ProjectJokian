@@ -23,15 +23,36 @@
                 </a>
                 <div class="d-flex align-items-center">
                     <div class="MenuItem" id="MenuItems">
-                        <a class="item" href="{{ url('/') }}">Home</a>
-                        <a class="item" href="{{ url('/events') }}">Event</a>
-                        <a class="item" href="{{ url('/destination') }}">Destination</a>
-                        <a class="item" href="{{ url('/package') }}">Package</a>
+                        <a class="item" href="{{ route('home.visitor') }}">Home</a>
+                        <a class="item" href="{{ route('events.index') }}">Event</a>
+                        <a class="item" href="{{ url('#') }}">Destination</a>
+                        <a class="item" href="{{ url('#') }}">Package</a>
+                        <div class="dropdown">
+                            <a class="item dropdown-toggle" href="#" onclick="toggleDropdown()"
+                                aria-expanded="false">
+                                Profile
+                            </a>
+                            <ul class="dropdown-menu" id="profileDropdownMenu"
+                                aria-labelledby="profileDropdown">
+                                <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Edit Profile</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); logout()">Logout</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <form class="w-100 me-3" role="search">
                         <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                     </form>
-                    <img id="profile-picture" class="rounded-circle profile-picture" src="{{ asset('assets/icon/pp.jpg') }}" width="30" height="30">
+                    <a href="{{ route('profile.edit') }}">
+                        @if (Auth::user()->foto)
+                            <img src="{{ asset('storage/' . Auth::user()->foto) }}" alt="Profile Picture"
+                                class="profile-picture">
+                        @else
+                            <img src="{{ asset('assets/icon/pp.jpg') }}" alt="Default Profile Picture"
+                                class="profile-picture">
+                        @endif
+                    </a>
                     <a href="#" class="mobile bars" id="NavMobile">
                         <img class="image" src="{{ asset('assets/image/bars.png') }}" alt="Logo">
                     </a>
@@ -190,5 +211,22 @@
     </script>
 </main>
 <script src="{{ asset('assets/js/script-event.js') }}"></script>
+<script>
+    function toggleDropdown() {
+        var dropdownMenu = document.getElementById("profileDropdownMenu");
+        dropdownMenu.classList.toggle("show");
+    }
+
+    function logout() {
+        document.getElementById('logout-form').submit();
+    }
+
+    document.addEventListener("click", function(event) {
+        var dropdownMenu = document.getElementById("profileDropdownMenu");
+        if (!event.target.closest('.dropdown')) {
+            dropdownMenu.classList.remove("show");
+        }
+    });
+</script>
 </body>
 </html>

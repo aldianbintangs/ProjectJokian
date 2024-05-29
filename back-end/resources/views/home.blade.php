@@ -22,9 +22,9 @@
                     </a>
                     <div class="navbar">
                         <div class="MenuItem" id="MenuItems">
-                            <a class="item" href="{{ url('index.html') }}">Home</a>
+                            <a class="item" href="{{ route('home.visitor') }}">Home</a>
                             <a class="item" href="{{ route('events.index') }}">Event</a>
-                            <a class="item" href="{{ url('destination.html') }}">Destination</a>
+                            <a class="item" href="{{ url('#') }}">Destination</a>
                             <a class="item" href="{{ url('#') }}">Package</a>
                             {{-- <a class="item" href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a> --}}

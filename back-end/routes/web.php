@@ -69,4 +69,5 @@ Route::middleware('auth.admin')->group(function () {
         'update' => 'admin.events.update',
         'destroy' => 'admin.events.destroy',
     ]);
+    Route::put('/admin/users/{user}', [AdminUserController::class, 'update'])->name('admin.users.update');
 });

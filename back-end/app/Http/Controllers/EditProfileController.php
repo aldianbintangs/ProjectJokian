@@ -30,7 +30,7 @@ class EditProfileController extends Controller
 
         if ($request->hasFile('foto')) {
             if ($user->foto) {
-                Storage::delete($user->foto);
+                Storage::disk('public')->delete($user->foto);
             }
 
             $fotoPath = $request->file('foto')->store('profile_pictures', 'public');

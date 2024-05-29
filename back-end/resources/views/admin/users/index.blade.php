@@ -39,9 +39,7 @@
                             <td>{{ $user->email }}</td>
                             <td>
                                 <div class="button">
-                                    <button class="edit-btn">
-                                        <a href="{{ route('admin.users.edit', $user->id) }}" class="link-btn">Edit</a>
-                                    </button>
+                                    <button class="edit-btn" data-user-id="{{ $user->id }}">Edit</button>
                                     <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
@@ -79,10 +77,36 @@
             </form>
         </div>
     </div>
+    <div id="editUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Edit User</h2>
+            <form id="editForm" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="form-group">
+                    <label for="edit_username">Username</label>
+                    <input type="text" id="edit_username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit_email">Email</label>
+                    <input type="email" id="edit_email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit_password">Password</label>
+                    <input type="password" id="edit_password" name="password" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
     <script>
         var modal = document.getElementById("myModal");
+        var editModal = document.getElementById("editUserModal");
         var btn = document.querySelector(".add-user-btn");
+        var editBtns = document.querySelectorAll(".edit-btn");
         var span = document.getElementsByClassName("close")[0];
+        var editSpan = document.getElementsByClassName("close")[1];
 
         btn.onclick = function() {
             modal.style.display = "block";
@@ -95,6 +119,28 @@
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+            }
+        }
+
+        editBtns.forEach(function(editBtn) {
+        editBtn.onclick = function() {
+        var userId = this.getAttribute("data-user-id");
+        var editForm = document.getElementById("editForm");
+        editForm.action = "/admin/users/" + userId;
+        editModal.style.display = "block";
+    }
+        });
+
+        editSpan.onclick = function() {
+            editModal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+            if (event.target == editModal) {
+                editModal.style.display = "none";
             }
         }
     </script>

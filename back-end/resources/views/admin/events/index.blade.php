@@ -21,7 +21,6 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Date</th>
-                    <th>Image</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -32,11 +31,6 @@
                         <td>{{ $event->description }}</td>
                         <td>{{ $event->event_date }}</td>
                         <td>
-                            @if($event->image)
-                                <img src="{{ asset('storage/' . $event->image) }}" alt="{{ $event->title }}" width="100">
-                            @endif
-                        </td>
-                        <td>
                             <button class="btn btn-warning btn-sm"
                                     data-bs-toggle="modal"
                                     data-bs-target="#editEventModal"
@@ -44,7 +38,7 @@
                                     data-title="{{ $event->title }}"
                                     data-description="{{ $event->description }}"
                                     data-date="{{ $event->event_date }}"
-                                    data-image="{{ $event->image }}">
+                                    >
                                 Edit
                             </button>
                             <form action="{{ route('admin.events.destroy', $event) }}" method="POST" style="display:inline-block;">
@@ -59,7 +53,6 @@
         </table>
     </div>
 
-    <!-- Add Event Modal -->
     <div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -82,10 +75,6 @@
                             <label for="event_date" class="form-label">Event Date</label>
                             <input type="date" name="event_date" class="form-control" id="event_date" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="event_image" class="form-label">Event Image</label>
-                            <input type="file" name="event_image" class="form-control" id="event_image">
-                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -96,7 +85,6 @@
         </div>
     </div>
 
-    <!-- Edit Event Modal -->
     <div class="modal fade" id="editEventModal" tabindex="-1" aria-labelledby="editEventModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -119,10 +107,6 @@
                         <div class="mb-3">
                             <label for="edit_event_date" class="form-label">Event Date</label>
                             <input type="date" name="event_date" class="form-control" id="edit_event_date" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="edit_event_image" class="form-label">Event Image</label>
-                            <input type="file" name="event_image" class="form-control" id="edit_event_image">
                         </div>
                         <input type="hidden" name="id" id="edit_event_id">
                     </form>

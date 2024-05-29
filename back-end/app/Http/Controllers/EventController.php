@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
 
 class EventController extends Controller
 {
@@ -22,18 +23,11 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
-        $event = new Event();
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'description' => 'nullable',
             'event_date' => 'required|date',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('events', 'public');
-            $event->image = $imagePath;
-        }
 
         Event::create($validatedData);
 
@@ -51,16 +45,7 @@ class EventController extends Controller
             'title' => 'required|max:255',
             'description' => 'nullable',
             'event_date' => 'required|date',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
-        if ($request->hasFile('image')) {
-            if ($event->image) {
-                Storage::disk('public')->delete($event->image);
-            }
-            $imagePath = $request->file('image')->store('events', 'public');
-            $event->image = $imagePath;
-        }
 
         $event->update($validatedData);
 
@@ -69,9 +54,6 @@ class EventController extends Controller
 
     public function destroy(Event $event)
     {
-        if ($event->image) {
-            Storage::disk('public')->delete($event->image);
-        }
         $event->delete();
 
         return redirect()->route('admin.events.index')->with('success', 'Event deleted successfully!');

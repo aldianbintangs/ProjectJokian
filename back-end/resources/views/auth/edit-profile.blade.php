@@ -27,7 +27,7 @@
                     @endif
                     <div class="uploadPhotos">
                         <label for="upload-photo">Change Your Photos</label>
-                        <input type="file" name="photo" id="upload-photo" />
+                        <input type="file" name="foto" id="upload-photo" />
                     </div>
 
                 </div>
