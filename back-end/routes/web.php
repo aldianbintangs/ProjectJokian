@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\RedirectAfterLogout;
 use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,4 +54,14 @@ Route::middleware('auth.admin')->group(function () {
         'update' => 'admin.users.update',
         'destroy' => 'admin.users.destroy',
     ]);
+    Route::resource('admin/events', EventController::class)->names([
+        'index' => 'admin.events.index',
+        'create' => 'admin.events.create',
+        'store' => 'admin.events.store',
+        'show' => 'admin.events.show',
+        'edit' => 'admin.events.edit',
+        'update' => 'admin.events.update',
+        'destroy' => 'admin.events.destroy',
+    ]);
 });
+Route::get('/api/events', [EventController::class, 'getEvents'])->name('admin.events.index');
