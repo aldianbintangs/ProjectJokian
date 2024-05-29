@@ -60,10 +60,11 @@
             padding: 20px;
             border-radius: 10px;
             color: #000;
+            width: 700px;
         }
 
         .add-user-btn {
-            background-color: #007bff;
+            background-color: red;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -75,7 +76,7 @@
         }
 
         table {
-            width: 100%;
+            width: 400px;
             border-collapse: collapse;
             margin-bottom: 20px;
         }

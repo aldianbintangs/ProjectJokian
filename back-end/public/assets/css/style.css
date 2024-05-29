@@ -182,6 +182,10 @@ a.site-logo .image {
     border: 5px solid #ccc;
 }
 
+.navbar{
+    margin-left: 300px;
+}
+
 @media (max-width: 728px) {
     #landing {
         padding: 60px 15px 50px 15px;

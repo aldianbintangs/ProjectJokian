@@ -16,6 +16,7 @@
             font-family: 'Lexend', sans-serif;
             background: linear-gradient(to right, #162E52 0%, #214161 9%, #305E79 47%, #448699 100%);
             color: white;
+            overflow-x: hidden;
         }
 
         .profile {
@@ -60,6 +61,7 @@
             padding: 20px;
             border-radius: 10px;
             color: #000;
+            width: 95%;
         }
 
         .add-user-btn {
@@ -120,18 +122,23 @@
             color: white;
 
         }
+
+        .user-management img {
+            margin-top: 30px;
+        }
     </style>
 </head>
 
 <body>
     <div class="header">
-        <img src="assets/image/profile_logo.png" alt="">
+        <img src="{{ asset('assets/image/profile_logo.png') }}" alt="">
         <div class="profile">
             <p>Hi, Admin #name</p>
         </div>
     </div>
     <div class="container">
         <div class="user-management">
+            <a href="/dashboard/admin"><img src="{{ asset('assets/image/back-button.png') }}" alt=""></a>
             <button class="add-user-btn">Add User</button>
             <table>
                 <thead>
