@@ -41,6 +41,10 @@
                                             onclick="event.preventDefault(); logout()">Logout</a></li>
                                 </ul>
                             </div>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                         <form class="w-100 me-3" role="search">
                             <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
@@ -141,7 +145,30 @@
                             </div>
                         </div>
                         <div class="calendar-footer">
-
+                            <div class="emptyForm" id="emptyForm">
+                                <h4 id="emptyFormTitle">No events now</h4>
+                                <a class="addEvent" id="changeFormButton">Add new</a>
+                            </div>
+                            <div class="addForm" id="addForm">
+                                <h4>Add new event</h4>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input id="eventTitleInput" type="text" class="validate">
+                                        <label for="eventTitleInput">Title</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input id="eventDescInput" type="text" class="validate">
+                                        <label for="eventDescInput">Description</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <label for="eventImageInput">Event Image</label><br>
+                                        <input id="eventImageInput" type="file" class="validate">
+                                    </div>
+                                </div>
+                                <div class="addEventButtons">
+                                    <a class="waves-effect waves-light btn blue lighten-2" id="addEventButton">Add</a>
+                                    <a class="waves-effect waves-light btn grey lighten-2" id="cancelAdd">Cancel</a>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -208,5 +235,4 @@
         });
     </script>
 </body>
-
 </html>

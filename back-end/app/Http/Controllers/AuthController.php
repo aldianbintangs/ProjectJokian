@@ -34,6 +34,10 @@ class AuthController extends Controller
     public function loginVisitor(Request $request)
     {
         // validasi inputan
+        $validator = Validator::make($request->all(), [
+            'username' => 'required',
+            'password' => 'required|min:6',
+        ]);
         $credentials = $request->only('username', 'password');
         if (Auth::attempt(array_merge($credentials, ['role' => 'visitor']))) {
             return redirect()->route('home.visitor');

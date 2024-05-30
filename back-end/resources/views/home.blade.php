@@ -41,7 +41,7 @@
                                     </li>
                                 </ul>
                             </div> --}}
-                                <div class="dropdown">
+                                {{-- <div class="dropdown"> --}}
                                     <a class="item dropdown-toggle" href="#" onclick="toggleDropdown()"
                                         aria-expanded="false">
                                         Profile
